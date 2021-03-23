@@ -7,9 +7,7 @@
 <div class="col-md-4 col-lg-offset-4">
     {{ wtf.quick_form(form) }}
 </div>
-    Note:You will have to make a new account for community.
-    <br> <br>
-    नोट: आपको समुदाय के लिए एक नया खाता बनाना होगा।
+   
 </div>
 <br>
 <p style="text-align: center;">{{ _('New User?   नया उपयोगकर्ता?') }} <a href="{{ url_for('auth.register') }}">{{ _('Join Dva Patri Community Now!  Dva Patri समुदाय से जुड़ें
@@ -18,4 +16,8 @@
     {{ _('Forgot Your Password?  क्या आप पासवर्ड भूल गए?') }}
     <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Lets get you a new one!  आओ हम आपको एक नया करें!') }}</a>
 </p>
+
+ Note:You will have to make a new account for community.
+    <br> <br>
+    नोट: आपको समुदाय के लिए एक नया खाता बनाना होगा।
 {% endblock %}
