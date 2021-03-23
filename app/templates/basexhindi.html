@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - {% else %}{{ _('स्ट्रीमफिश') }}{% endif %}
+    {% if title %}{{ title }} - {% else %}{{ _('दवा पेट्री समुदाय') }}{% endif %}
 {% endblock %}
 {% block navbar %}
     <nav class="navbar nav  bar-default">
@@ -29,7 +29,7 @@
                 {% endif %}
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}
-                    <li><a href="{{ url_for('auth.login') }}">{{ _('स्ट्रीमफिश') }}</a></li>
+                    <li><a href="{{ url_for('auth.login') }}">{{ _('दवा पेट्री समुदाय') }}</a></li>
                     {% else %}
                     <li>
                         <a href="{{ url_for('main.messages') }}">{{ _('निजी संदेश') }}
