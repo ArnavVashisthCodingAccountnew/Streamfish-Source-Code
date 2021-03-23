@@ -2,22 +2,20 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<h1 style="text-align:center;">{{ _('Welcome Back to Dva Patri !  Dva Patri में आपका स्वागत है! " }}</h1>
+<h1 style="text-align:center;">{{ _('Welcome Back to Community!    समुदाय में आपका स्वागत है!') }}</h1>
 <div class="row">
 <div class="col-md-4 col-lg-offset-4">
     {{ wtf.quick_form(form) }}
 </div>
+    Note:You will have to make a new account for community.
+    <br> <br>
+    नोट: आपको समुदाय के लिए एक नया खाता बनाना होगा।
 </div>
 <br>
-<p style="text-align: center;">{{ _('New User?') }} <a href="{{ url_for('auth.register') }}">{{ _('Join Dva Patri Community Now!  dva patru  समुदाय में शामिल हों!') }}</a></p>
-
-<p> Note:You will have to make a new account for dva patri community.
-    <br><br>
-    नोट: आपको dva patri समुदाय के लिए एक नया खाता बनाना होगा।
-</P>
+<p style="text-align: center;">{{ _('New User?   नया उपयोगकर्ता?) }} <a href="{{ url_for('auth.register') }}">{{ _('Join Dva Patri Community Now!  Dva Patri समुदाय से जुड़ें
+  अब! ') }}</a></p>
 <p style="text-align: center;">
     {{ _('Forgot Your Password?  क्या आप पासवर्ड भूल गए?') }}
-    <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Lets get you a new one!   आइए आपको एक नया बनाते हैं!') }}</a>
+    <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Lets get you a new one!  आओ हम आपको एक नया करें!') }}</a>
 </p>
 {% endblock %}
-
