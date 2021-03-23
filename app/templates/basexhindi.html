@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - {% else %}{{ _('स्ट्रीमफिश') }}{% endif %}
+    {% if title %}{{ title }} - {% else %}{{ _('दवा पटरी') }}{% endif %}
 {% endblock %}
 {% block navbar %}
     <nav class="navbar nav  bar-default">
@@ -13,7 +13,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url_for('main.index') }}">स्ट्रीमफिश</a>
+                <a class="navbar-brand" href="{{ url_for('main.index') }}">दवा पटरी</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
