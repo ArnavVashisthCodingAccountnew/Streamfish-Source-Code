@@ -1,53 +1,79 @@
     {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - Streamfish{% else %}{{ _('Streamfish') }}{% endif %}
+    {% if title %}{{ title }} - {% else %}{{ _('दवा पटरी') }}{% endif %}
 {% endblock %}
 {% block navbar %}
-    <nav class="navbar nav  bar-default margin: 0;">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{{ url_for('main.index') }}">Dva Patri </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('main.index') }}">{{ _('Home घर') }}</a></li>
-                    <li><a href="{{ url_for('main.explore') }}">{{ _('Live Chat  सीधी बातचीत') }}</a></li>
-                </ul>
-                {% if g.search_form %}
-                <!--<form class="navbar-form navbar-left" method="get" action="{{ url_for('main.search') }}">
-                    <div class="form-group">
-                        {{ g.search_form.q(size=25, class='form-control', placeholder=g.search_form.q.label.text) }}
-                    </div>
-                </form>-->
-                {% endif %}
-                <ul class="nav navbar-nav navbar-right">
-                    {% if current_user.is_anonymous %}
-                    <li><a href="{{ url_for('auth.login') }}">{{ _('Dva Patri') }}</a></li>
-                    {% else %}
-                    <li>
-                        <a href="{{ url_for('main.messages') }}">{{ _('Private Messages') }}
-                            {% set new_messages = current_user.new_messages() %}
-                            <span id="message_count" class="badge"
-                                  style="visibility: {% if new_messages %}visible 
-                                                     {% else %}hidden{% endif %};">
-                                {% if new_messages %}
-                                    <audio>
-                                    <source src="/static" filename="lol_33.mp3">   
-                                    </audio>
-                                {% endif %}
-                                {{ new_messages }}
-                            </span>
-                        </a>
-                    </li>
-                    <li><a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('Profile प्रोफ़ाइल') }}</a></li>
-                    <li><a href="{{ url_for('auth.logout') }}">{{ _('Logout  लॉग आउट') }}</a></li>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+    
+</style>
+<div class="mobile-container">
+
+<div class="topnav">
+  <a href="{{ url_for('main.index') }}" class="active">Dva Patri</a>
+  <div id="myLinks">
+    <a href="{{ url_for('main.index') }}">Home</a>
+    <a href="{{ url_for('main.explore') }}">Live Chat</a>
+                    
+
+                    
+                  <a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('Profile') }}</a>
+                    <a href="{{ url_for('auth.logout') }}">{{ _('Log Out') }}</a>
+                    <a href="{{ url_for('main.discord') }}">{{ _('Discord!') }}</a>
+                    {% endif %}
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+                
+                    
                     {% endif %}
                 </ul>
             </div>
