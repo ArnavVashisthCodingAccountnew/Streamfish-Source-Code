@@ -59,7 +59,13 @@
   <div id="myLinks">
     <a href="{{ url_for('main.index') }}">घर</a>
     <a href="{{ url_for('main.explore') }}">सीधी बातचीत</a>
+                    
 
+                    
+                  <a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('प्रोफ़ाइल') }}</a>
+                    <a href="{{ url_for('auth.logout') }}">{{ _('लॉग आउट') }}</a>
+                    <a href="{{ url_for('main.discord') }}">{{ _('Discord') }}</a>
+                    {% endif %}
   </div>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
@@ -91,9 +97,7 @@
                             </span>
                         </a>
                     </li>
-                    <li><a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('प्रोफ़ाइल') }}</a></li>
-                    <li><a href="{{ url_for('auth.logout') }}">{{ _('लॉग आउट') }}</a></li>
-                    <li><a href="{{ url_for('main.discord') }}">{{ _('Discord') }}</a></li>
+                    
                     {% endif %}
                 </ul>
             </div>
